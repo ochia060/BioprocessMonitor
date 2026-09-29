@@ -1,34 +1,21 @@
-# Repository Structure
-
-`datasets/`: Store raw data in this directory. Delete `.gitkeep` once you add your own files to this directory.
-
-`figures/`: Export figures created by your code to this directory. Delete `.gitkeep` once you add your own files to this
-directory.
-
-`src/`: Store all Python code, except main.py, in this directory.
-
-`tables/`: Export tables created by your code to this directory. Delete `.gitkeep` once you add your own files to this
-directory.
-
-`.gitignore`: Contains files to be ignored by Git. You can copy the `.gitignore` file from this repository into your own
-project.
-
-`environment.yaml`: Contains information about your conda environment. Run the following command:
-`conda export > environment.yaml` to generate this file for your project. You can delete the last line in this file that
-says `prefix`.
-
-`main.py`: This is the only Python file that will be run. It should be kept relatively clean and mainly execute code
-from `src/`.
-
-`README.md`: This file, which contains information about the repository.
-
-Bioprocess Monitor
+Bioprocess Monitor: Batch Fermentation Monitoring
+Monitor pH, temperature, and component concentrations from a fermentation data set
 
 Overview:
+This project
+- extract batch information from a fermentation dataset
+- identify measurements of pH and temperature within acceptable operating ranges
+- generate a dashboard of figures for each batch and operation mode
+- generate summary tables for each mode of operation
 
 Features:
 
+
 Technologies used:
+- Python 3.14.7
+- numpy 2.5.2
+- pandas 3.0.5
+- matplotlib 3.11.0
 
 Code design:
 
