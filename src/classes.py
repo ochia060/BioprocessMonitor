@@ -2,6 +2,8 @@ import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MultipleLocator
+
 
 class BioprocessMonitor:
     def __init__(self, filepath, ph_lims, temperature_lims):
@@ -34,12 +36,15 @@ class BioprocessMonitor:
         temperature_mask = self.optimal_temperature_mask(df_batch)
         #to differentiate between acceptable and not acceptable pH and temp data
 
-        fig, axes = plt.subplots(2, 2, figsize=(12, 8))
+        fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(6.5*2, 4.0*2), dpi=400, layout="constrained")
         #make 2x2 figure of plots
         #[0,0] = top left = [glucose], [biomass], [product] vs time
         #[0,1] = top right = temperature vs time
         #[1,0] = bottom left = pH vs time
         #[1,1] = bottom right = dissolved oxygen vs time
+
+        kwargs_scatter = dict(s=35, edgecolor="black", alpha=0.7, linewidth=0.3)
+        #to apply same format to all subplot markers
 
         #--------------------------------------------------
         # Glucose, biomass, & product concentration vs time
@@ -48,17 +53,19 @@ class BioprocessMonitor:
             df_batch["time_h"],
             df_batch["C_glucose_g_L^-1"],
             marker="o",
-            color="green",
-            label="Glucose"
+            color="purple",
+            label="Glucose",
+            **kwargs_scatter
         )
         #plot [glucose] vs time
 
         axes[0, 0].scatter(
             df_batch["time_h"],
             df_batch["C_biomass_g_L^-1"],
-            marker="x",
+            marker="D",
             color="blue",
-            label="Biomass"
+            label="Biomass",
+            **kwargs_scatter
         )
         #plot [biomass] vs time
 
@@ -66,8 +73,9 @@ class BioprocessMonitor:
             df_batch["time_h"],
             df_batch["C_product_g_L^-1"],
             marker="s",
-            color="purple",
-            label="Product"
+            color="deeppink",
+            label="Product",
+            **kwargs_scatter
         )
         #plot [product] vs time
 
@@ -85,16 +93,18 @@ class BioprocessMonitor:
             df_batch.loc[temperature_mask, "temperature_C"],
             marker="o",
             color="green",
-            label="Acceptable"
+            label="Acceptable",
+            **kwargs_scatter
         )
         #plots temp points in acceptable range
 
         axes[0, 1].scatter(
             df_batch.loc[~temperature_mask, "time_h"],
             df_batch.loc[~temperature_mask, "temperature_C"],
-            marker="x",
+            marker="X",
             color="red",
-            label="Outside range"
+            label="Outside range",
+            **kwargs_scatter
         )
         #plots temp points outside acceptable range
 
@@ -112,16 +122,18 @@ class BioprocessMonitor:
             df_batch.loc[ph_mask, "pH"],
             marker="o",
             color="green",
-            label="Acceptable"
+            label="Acceptable",
+            **kwargs_scatter
         )
         #plots pH pts in range
 
         axes[1, 0].scatter(
             df_batch.loc[~ph_mask, "time_h"],
             df_batch.loc[~ph_mask, "pH"],
-            marker="x",
+            marker="X",
             color="red",
-            label="Outside range"
+            label="Outside range",
+            **kwargs_scatter
         )
         #plots pH pts outside range
 
@@ -136,7 +148,10 @@ class BioprocessMonitor:
         # --------------------------------------------------
         axes[1, 1].scatter(
             df_batch["time_h"],
-            df_batch["DO_percent"]
+            df_batch["DO_percent"],
+            marker="o",
+            color="blue",
+            **kwargs_scatter
         )
         #plot dissolved O2 vs time
 
@@ -146,7 +161,7 @@ class BioprocessMonitor:
 
         #to add 6h ticks on all x-axes
         for ax in axes.flat:
-            ax.set_xticks(np.arange(0, df_batch["time_h"].max() + 6, 6))
+            ax.xaxis.set_major_locator(MultipleLocator(6))
 
         fig.suptitle(f"Batch {batch_id}")
 
