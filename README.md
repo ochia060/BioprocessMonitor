@@ -24,7 +24,7 @@ The BioprocessMonitor class includes functions for fermentation data analysis:
 Generates figures and summary tables for each mode of operation and batch id
 
 ## Dashboard
-
+dashboard 
 
 ## Summary Table
 

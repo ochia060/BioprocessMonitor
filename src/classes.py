@@ -72,7 +72,7 @@ class BioprocessMonitor:
         axes[0, 0].scatter(
             df_batch["time_h"],
             df_batch["C_product_g_L^-1"],
-            marker="s",
+            marker="*",
             color="deeppink",
             label="Product",
             **kwargs_scatter
