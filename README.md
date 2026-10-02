@@ -30,9 +30,17 @@ The pH and temperature limits may be modified in the main.py without chaging the
 ## Dashboard
  <img width="5200" height="3200" alt="Batch_001_Mode_A" src="https://github.com/user-attachments/assets/0f229e26-d363-4da8-adaa-26fb561a9041" /> \
 \
- The dashboard provides an overview of the process conditions for a single fermentation batch. It contains 4 scatter plots demonstrating species concentration (top left), temperature (top right), pH (bottom left), and %dissolved oxygen (bottom right) over time.
+The dashboard provides an overview of the process conditions for a single fermentation batch. It contains 4 scatter plots demonstrating species concentration (top left), temperature (top right), pH (bottom left), and %dissolved oxygen (bottom right) over time.
 
 
 ## Summary Table
-
+|batch_id|ph_optimal_percent|temperature_optimal_percent|C_product_g_L^-1_final|
+|--------|------------------|---------------------------|----------------------|
+|1       |93.81             |97.94                      |46.5                  |
+|2       |96.69             |97.52                      |50.8                  |
+|3       |95.89             |93.15                      |44.6                  |
+|4       |100.0             |96.47                      |48.6                  |
+|5       |48.62             |99.08                      |24.7                  |
+\
+The summary table provides an overview of the %of pH and temperature measurements within optimal operating range, and the final glucose concentration. It shows this for each batch, and each operation mode.
 
