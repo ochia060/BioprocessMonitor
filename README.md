@@ -7,12 +7,17 @@ Important process variables, including pH and temperature, were evaluated agains
 This tool also creates visualised data of process variables over time, and summary tables for each operation mode and batch.
 
 ## Features:
-The BioprocessMonitor class includes functions for fermentation data analysis:\
+### The BioprocessMonitor class includes functions for fermentation data analysis:\
+\
 **Batch extraction:** extracts data corresponding to a specific fermentation batch\
+\
 **pH monitoring:** determines which pH measurements are within acceptable operating limits\
+\
 **Temperature monitoring:** determines which temperature measurements are within acceptable operating limits\
+\
 **Dashboard generation:** creates a dashboard with subplots showing concentration profiles, temperature, pH, and dissolved oxygen over time\
-**Summary generation:** calculates the percentage of measurements within acceptable operating limits and records the final product concentration for each batch\
+\
+**Summary generation:** calculates the percentage of measurements within acceptable operating limits and records the final product concentration for each batch
 
 ## Technologies used:
 - Python 3.14.7
