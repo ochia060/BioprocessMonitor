@@ -2,7 +2,7 @@
 A Python based monitoring tool that analyses batch fermentation data and generates dashboards and summary tables for pH, temperature, and component concentration.
 
 ## Overview:
-The goal of this project was to develop a Pythin based tool for monitoring fermentation processes using batch data.
+The goal of this project was to develop a Python based tool for monitoring fermentation processes using batch data.
 Important process variables, including pH and temperature, were evaluated against pre-defined acceptable operating ranges.
 This tool also creates visualised data of process variables over time, and summary tables for each operation mode and batch.
 
@@ -28,7 +28,8 @@ These results are exported as a .csv file in the 'tables' directory\
 The pH and temperature limits may be modified in the main.py without chaging the BioprocessMonitor class.
 
 ## Dashboard
- 
+ <img width="5200" height="3200" alt="Batch_001_Mode_A" src="https://github.com/user-attachments/assets/0f229e26-d363-4da8-adaa-26fb561a9041" />
+
 
 ## Summary Table
 
