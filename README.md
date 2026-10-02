@@ -41,6 +41,7 @@ The dashboard provides an overview of the process conditions for a single fermen
 |3       |95.89             |93.15                      |44.6                  |
 |4       |100.0             |96.47                      |48.6                  |
 |5       |48.62             |99.08                      |24.7                  |
+--------------------------------------------------------------------------------
 \
 The summary table provides an overview of the %of pH and temperature measurements within optimal operating range, and the final glucose concentration. It shows this for each batch, and each operation mode.
 
