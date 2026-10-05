@@ -168,7 +168,7 @@ class BioprocessMonitor:
         plt.tight_layout()
         fig.savefig(filepath)
         plt.close(fig)
-        #saves figure as .png to filepath and closes figure after saving
+        #saves figure as .png and closes figure after saving
 
     def export_summary(self, filepath):
         summary = []
